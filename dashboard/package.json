@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p ${PORT:-3000}",
+    "railway:build": "npm ci && npm run build",
+    "railway:start": "npm run start",
     "lint": "next lint",
     "type-check": "tsc --noEmit"
   },
