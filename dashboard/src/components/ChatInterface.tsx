@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Send, Loader, AlertCircle, Trash2, ChevronDown, ChevronUp, Bot } from 'lucide-react'
 import axios from 'axios'
+import { API_BASE_URL } from '@/services/config'
 
 export type UserRole = 'L1' | 'L2' | 'L3'
 
@@ -35,8 +36,6 @@ interface ChatInterfaceProps {
   userRole?: UserRole
   onClose?: () => void
 }
-
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3002'
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
