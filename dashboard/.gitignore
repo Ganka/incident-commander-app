@@ -1,0 +1,18 @@
+# Dashboard
+.next/
+dist/
+build/
+*.local
+.env.local
+
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --sidebar-width: 240px;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-slate-100 text-slate-900;
+  }
+
+  * {
+    @apply border-slate-200;
+  }
+}
+
+@layer components {
+  /* Cards */
+  .card {
+    @apply bg-white rounded-xl border border-slate-200 shadow-card;
+  }
+
+  /* Severity badges */
+  .badge-critical {
+    @apply bg-red-50 text-red-700 border border-red-200;
+  }
+  .badge-high {
+    @apply bg-orange-50 text-orange-700 border border-orange-200;
+  }
+  .badge-medium {
+    @apply bg-amber-50 text-amber-700 border border-amber-200;
+  }
+  .badge-low {
+    @apply bg-green-50 text-green-700 border border-green-200;
+  }
+  .badge-info {
+    @apply bg-blue-50 text-blue-700 border border-blue-200;
+  }
+
+  /* Status dots */
+  .dot-critical  { @apply bg-red-500;    }
+  .dot-high      { @apply bg-orange-500; }
+  .dot-medium    { @apply bg-amber-500;  }
+  .dot-low       { @apply bg-green-500;  }
+  .dot-healthy   { @apply bg-emerald-500; }
+  .dot-degraded  { @apply bg-amber-500;  }
+  .dot-unhealthy { @apply bg-red-500;    }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+  }
+}
+
+/* Sidebar-aware layout */
+.layout-sidebar {
+  padding-left: var(--sidebar-width);
+}
+
+/* Smooth transitions for interactive elements */
+button, a {
+  transition-property: color, background-color, border-color, opacity;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+}
